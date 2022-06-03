@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+}
+
+label {
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#menu a {
+    font-size:18px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+#menu button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #intro{
+        width: 90% !important;
+    }
+}
+
+@media(max-width: 576px){
+    .icono-wrap{
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+}
+
+* {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  .wrapper {
+    min-height: calc(100% - 4rem);
+  }
+  .footer {
+    height: 4rem;
+    background-color: #e2e2e2
+  }  
+
+
+
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 50%;
+        height: 25px;
+        margin-top: 25px;
+        margin-left:  500px;
+        background: #d3d3d3;
+        outline: black;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .mapa {
+    background: url(MapaJardin.png);
+    width: 40%;
+    height: 500 px;
+    }
+
+#local {
+    background: #f3f3f3;
+    padding-bottom: 300 px;
+    display: flex;
+    justify-content: center;
+}
+
+#map {
+	height: 350px;
+	width: 50%;
+    justify-content: center !important;
+    margin-left:  550px;
+}
+
+/* Formulario */
+
+
+
+.formulario__label{
+    display: block;
+    font-weight: 600;
+    color: #0c4e07e9;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input {
+    background: #fff;
+    border: 3px solid;
+    border-radius: 3px;
+    height: 60px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163,0.4);
+}
+
+.formulario__input-error {
+    font-size: 20px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 1010px;
+    bottom: 20px;
+    z-index: 100;
+    font-size: 27px;
+    opacity: 0
+}
+
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background: #e72c2cd7;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__btn {
+    height: 45px;
+    width: 140px;
+    background: #0c4e07e9;
+    color: #fff;
+    font-size: 28px;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163,163,163, 6);
+}
+
+.formulario__grupo-btn-enviar {
+    grid-column: span 2;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__mensaje-exito {
+    font-size: 25px;
+    color: #130092;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* -- Estilos para Validacion -- */
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+   border: 3px solid #bb2929;
+}
+
