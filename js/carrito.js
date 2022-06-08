@@ -202,16 +202,16 @@ class Carrito {
         productosLS = this.obtenerProductosLocalStorage();
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
-            total = total + element;
+            total = total + element - igv;
             
         }
         
-        igv = parseFloat(total * 0.18).toFixed(2);
-        subtotal = parseFloat(total-igv).toFixed(2);
+        igv = parseFloat(total*0.1).toFixed(2);
+        subtotal = parseFloat(total).toFixed(2);
 
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
+        document.getElementById('subtotal').innerHTML = "$ " + subtotal;
+        document.getElementById('igv').innerHTML = "$ " + igv;
+        document.getElementById('total').value = "$ " + (total-igv).toFixed(2);
     }
 
     obtenerEvento(e) {

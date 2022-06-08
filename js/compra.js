@@ -31,7 +31,7 @@ function procesarCompra() {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
-            text: 'No hay productos, selecciona alguno',
+            text: 'No hay productos en tu carrito... Debes seleccionar al menos uno',
             showConfirmButton: false,
             timer: 2000
         }).then(function () {
@@ -42,14 +42,14 @@ function procesarCompra() {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
-            text: 'Ingrese todos los campos requeridos',
+            text: 'Debes ingresar todos los campos requeridos',
             showConfirmButton: false,
             timer: 2000
         })
     }
     else {
         
-        //aqui se coloca el user id generado en el emailJS
+        //User ID
         (function () {
             emailjs.init("user_CEozz2F39lJJOLF5mJiDA");
         })();
@@ -59,7 +59,7 @@ function procesarCompra() {
         myform.submit( (event) => {
             event.preventDefault();
 
-            // Change to your service ID, or keep using the default service
+            // Cambiar al service ID
             var service_id = "default_service";
             var template_id = "template_3SA9LsqQ";
 
