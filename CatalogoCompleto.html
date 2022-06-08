@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=0.8, minimum-scale=0.8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>Carrito Compras en JavaScript</title>
+</head>
+
+<body>
+
+<!-- NAVBAR-->
+<nav class="navbar navbar-expand-lg 
+      navbar-light bg-light p-2" >
+  <div class="container-fluid">
+
+        <a class="navbar-brand p-2" id="menu"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <!--Inicio Secciones en containers de NavBar-->
+    <section class="container-fluid">
+      <div class="row">
+                
+            <!--Logo-->
+            <div class="col">
+              <a href="indexV3.html">
+                <button type="button" class="btn btn-outline-light">
+              <img src="img/icono.jpg" alt="LOGO Jardin de Todos" width="140" height="65" >
+                </button>
+              </a>
+            </div>
+
+            <!--Button Bar-->
+            <div class="col">
+              <div class="btn-group  p-3 mx-3" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary btn-lg" href="#" >Maceteros</button>
+                <button type="button" class="btn btn-outline-primary btn-lg" href="#" >Tierra</button>
+                <button type="button" class="btn btn-outline-primary btn-lg" href="# ">Flores</button>
+                <button type="button" class="btn btn-outline-primary btn-lg" href="# ">Arbustos</button>
+              </div>
+            </div>
+         
+          <!--Search Bar-->
+          <div class="col">
+            <form class="d-flex p-3 ">
+              <input class="form-control me-2" type="search" placeholder="Busca tu Producto de Tierra y Jardín favorito…" aria-label="Buscar">
+              <button class="btn btn-outline-success btn-lg" type="submit">¡Encontrar!</button>
+            </form>
+          </div>
+
+          <!--Botones Link-->
+          <div class="col">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+           
+                      <li class="nav-item">
+                        <a href="CarroComprasV2.html">
+                          <button type="button" class="btn btn-outline-secondary ">
+                            <img src="img/MiCarr.png" alt="Mi Carrito" height="59" >
+                          </button>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="MiCuentaV2.html">
+                          <button type="button" class="btn btn-outline-secondary">
+                           <img src="img/MiCue.png" alt="Mi Cuenta" height="59">
+                          </button>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="MiPedidoV2.html">
+                        <button type="button" class="btn btn-outline-secondary">
+                         <img src="img/MiPed.png" alt="Mi Pedido" height="59" >
+                       </button>
+                    </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="MiCuenta.html">
+                        <button type="button" class="btn btn-outline-secondary">
+                         <img src="img/Descuent.png" alt="Descuentos" height="59">
+                      </a>
+                        </button>
+                    </li>
+
+              </ul>
+            </div>
+          </div>
+
+      </div>
+    </section>
+  </div>
+</nav>
+<!--Fin Secciones en containers de NavBar-->
+
+<br>
+
+<!--Contenedor de Compras-->
+        <div class="container">
+            <div class="text-center">
+                <nav class="navbar navbar-expand-md ">
+                    <a class="navbar-brand" href="#">HAZ CLICK EN MI CARRITO PARA REVISAR EL ESTADO DE TU COMPRA</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/MiCarr.png" class="nav-link dropdown-toggle img-fluid"  href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+<!--Listado de Productos-->
+    <main>
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Macetero Bio</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/1 Macetero y Plato Bio.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Macetero Autoregante </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/2 Macetero Auto.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">29.990</span></h1>
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Macetero Barril</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/3 Macetero Barril.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">14.990</span></h1>
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Macetero Fibra Alto</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/4 Macetero Fibra Tall.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">19.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Tierra para Maceteros</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/1 Tierra Maceteros.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Tierra con Abono</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/2 Tierra con Abono.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Tierra de Hojas</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/3 Tierra de Hojas.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">7.500</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Fertilizante Cesped</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Fertilizante Cesped.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">9.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Arlequines</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Car3Arlequines.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">1.490</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Babianas</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Car3Babianas.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">1.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="10">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Copihues</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Flor Copihue.jpg" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">3.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="11">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Fresias</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Car3Fresias.png" class="card-img-top" height="300">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2.990</span></h1>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="12">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+<!--Footer-->
+<div class="wrapper">
+</div>
+<footer class= "footer text-center fs-3 text mt-2">
+    <a href="#" class="link-primary">NOSOTROS | </a>
+    <a href="#" class="link-primary"> COLABORA |</a>
+    <a href="#" class="link-primary"> SUSTENTABILIDAD |</a>
+    <a href="#" class="link-primary"> CONTACTANOS |</a>
+</footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>
